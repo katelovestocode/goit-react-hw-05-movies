@@ -10,7 +10,8 @@ font-size: 22px;
 font-weight: ${p => p.theme.fontWeights.bold};
 text-decoration: none;
 color:  ${p => p.theme.colors.darkAccent};
-padding: 10px;
+padding: 10px 0 10px 0;
+margin-left: ${p => p.theme.space[5]}px;
 `
 
 export const SearchForm = styled.form`
@@ -18,6 +19,7 @@ export const SearchForm = styled.form`
  display: flex;
  align-items: center;
  max-width: 400px;
+ margin-left: ${p => p.theme.space[5]}px;
  `
 
  export const SearchFormInput = styled.input`

@@ -6,9 +6,12 @@ import { NavLink } from "react-router-dom"
 export const Container = styled.div`
 display: flex;
 gap: 30px;
+padding-left: ${p => p.theme.space[5]}px;
+padding-right: ${p => p.theme.space[5]}px;
 `
 export const Content = styled.div`
-padding: 20px;
+padding-left: ${p => p.theme.space[5]}px;
+padding-right: ${p => p.theme.space[5]}px;
 width: 500px;
 `
 
@@ -21,6 +24,8 @@ gap: ${p => p.theme.space[4]}px;
 
 export const Navigation = styled.nav`
 display: flex; 
+padding-left: ${p => p.theme.space[5]}px;
+padding-right: ${p => p.theme.space[5]}px;
 gap: ${p => p.theme.space[6]}px;
 `
 
@@ -55,6 +60,8 @@ color: ${p => p.theme.colors.white};
 background-color: ${p => p.theme.colors.accentColor};
 padding: ${p => p.theme.space[4]}px;
 border-radius:${p => p.theme.radii.normal};
+margin-left: ${p => p.theme.space[5]}px;
+
 
   &:hover {
     color: ${p => p.theme.colors.white};

@@ -14,7 +14,7 @@ text-decoration: none;
 color:  ${p => p.theme.colors.darkAccent}`
 
 export const Container = styled.div`
-padding: ${p => p.theme.space[4]}px;
+margin-left: ${p => p.theme.space[5]}px;
 `
 
 export const Title = styled.h1`
