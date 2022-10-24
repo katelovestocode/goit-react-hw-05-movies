@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { fetchMovieReviews } from "../../../utils/fetchMovies"
 import { useParams } from "react-router-dom"
 import { Container, Title, Text } from '../Reviews/Reviews.styled';
+import { useLocation } from "react-router-dom"
 
 const Reviews = () => {
 
@@ -9,6 +10,7 @@ const Reviews = () => {
     // console.log(movieId);
 
     const [reviews, setReviews] = useState([]);   
+    const location = useLocation();
    
     
     useEffect(() => {
@@ -27,7 +29,7 @@ const Reviews = () => {
                 <Container>
                 <ul> 
                         {reviews.map((review, index) => (
-                            <li key={index}> 
+                            <li key={index} to={location.state?.from ?? "/movies"}> 
                             <Title> Author: {review.author} </Title>
                             <Text> {review.content} </Text> </li>))}
                 </ul>

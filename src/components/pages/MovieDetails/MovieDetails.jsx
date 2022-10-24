@@ -64,7 +64,7 @@ const MovieDetails = () => {
         <>
             {movieId && <> <ToastContainer />
                 
-             <NavItemBack to={location.state?.from ?? "/movies"}> Go back </NavItemBack>
+             <NavItemBack to={location.state?.from ?? "/movies"} > Go back </NavItemBack>
 
                 <Container>
                 <img src={movieImage} alt={movieTag} width="300" />
@@ -81,8 +81,8 @@ const MovieDetails = () => {
                 </Content> </Container>
             
                 <Navigation>
-            <NavItem to="cast" key="cast"> Cast </NavItem>
-            <NavItem to="reviews" key="reviews"> Reviews</NavItem>
+            <NavItem to="cast" key="cast" state={{from: location.state.from}}> Cast </NavItem>
+            <NavItem to="reviews" key="reviews" state={{from: location.state.from}}> Reviews</NavItem>
                 </Navigation>
             
             <Suspense fallback={<div> Loading... </div>}>  <Outlet /> </Suspense>

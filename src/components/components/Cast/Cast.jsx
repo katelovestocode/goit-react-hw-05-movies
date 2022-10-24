@@ -4,10 +4,12 @@ import { fetchMovieCast} from "../../../utils/fetchMovies"
 import { useParams } from "react-router-dom"
 import { BASE_IMG_URL } from "../../../utils/base_Image_Url"
 import { Container, List, ListItem, Image, Name } from './Cast.styled';
+import { useLocation } from "react-router-dom"
 
 
 const Cast = () => {
 
+    const location = useLocation();
     const { movieId } = useParams();
     const [castCharacter, setCastCharacter] = useState([]);        
       
@@ -24,7 +26,7 @@ const Cast = () => {
             <List>
             {castCharacter.map((item, index) => (
             
-            <ListItem key={index}>
+            <ListItem key={index} to={location.state?.from ?? "/movies"}>
                    {item.profile_path ? (<Image src={BASE_IMG_URL + item.profile_path} alt={item.name} width="150" />) : (<Image src="https://via.placeholder.com/150x225?text=Placeholder" alt={item.name} width="150" />)} 
             <Name>  {item.name} </Name>
             <p> Character: {item.character} </p></ListItem>
